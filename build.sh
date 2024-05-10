@@ -6,31 +6,9 @@
 # http://www.wtfpl.net/ for more details.
 ################
 
-sudo dnf -y groupinstall "Development Tools"
-sudo dnf -y install python \
-     ragel \
-     byacc \
-     flex \
-     autoconf \
-     automake \
-     lbzip2 \
-     gettext \
-     autogen \
-     libtool \
-     gperf \
-     gettext-devel \
-     meson \
-     ninja-build \
-     gcc-c++ \
-     libattr \
-     pkg-config \
-     which \
-     cmake \
-     glib2-devel
-
 set -x
 
-. env.sh
+. ./env.sh
 
 mkdir -p ${magicprefix}
 
