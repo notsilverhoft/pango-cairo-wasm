@@ -18,6 +18,6 @@ export ax_cv_c_float_words_bigendian=no
 
 ./emsdk/emsdk install latest
 ./emsdk/emsdk activate latest
-source ${magicdir}/emsdk/emsdk_env.sh
+. ./emsdk/emsdk_env.sh
 
 export MESON_CROSS="${magicdir}/emscripten-crossfile.meson"
