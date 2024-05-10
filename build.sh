@@ -94,9 +94,8 @@ cd ${magicdir}/freetype
 
 ./autogen.sh && \
     mkdir build && cd build && \
-    emcmake cmake .. && \
-    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
-    emmake make install DESTDIR=${magicprefix}
+    emcmake cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread'
 
 check_result
 ######################
@@ -186,9 +185,8 @@ cd ${magicdir}/freetype
 
 ./autogen.sh && \
     mkdir build && cd build && \
-    emcmake cmake .. && \
+    emcmake cmake -DCMAKE_BUILD_TYPE=Release .. && \
     emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
-    emmake make install DESTDIR=${magicprefix}
 
 check_result
 ######################
