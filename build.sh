@@ -10,8 +10,7 @@ set -x
 
 . ./env.sh
 
-mkdir -p ${magicprefix}
-
+export magicprefix=${magicdir}/build
 
 # copied from:
 # https://gist.github.com/kleisauke/acfa1c09522705efa5eb0541d2d00887
