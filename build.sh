@@ -92,10 +92,11 @@ check_result
 ######################
 
 cd ${magicdir}/freetype
-    mkdir build && cd build
-    emcmake cmake ..
-    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread'
-    emmake make install DESTDIR=${magicprefix}
+
+./autogen.sh && \
+    emconfigure ./configure --host=${CHOST} --prefix=${magicprefix} --enable-shared=no --disable-dependency-tracking CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
+    emmake make && \
+    emmake make install
 
 check_result
 ######################
@@ -182,10 +183,11 @@ check_result
 ######################
 
 cd ${magicdir}/freetype
-    mkdir build && cd build
-    emcmake cmake ..
-    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread'
-    emmake make install DESTDIR=${magicprefix}
+
+./autogen.sh && \
+    emconfigure ./configure --host=${CHOST} --prefix=${magicprefix} --enable-shared=no --disable-dependency-tracking CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
+    emmake make && \
+    emmake make install
 
 check_result
 ######################
