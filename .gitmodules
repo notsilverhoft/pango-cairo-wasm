@@ -9,7 +9,7 @@
 	url = https://github.com/glennrp/libpng.git
 [submodule "freetype"]
 	path = freetype
-	url = https://github.com/emscripten-ports/FreeType.git
+	url = https://github.com/notsilverhoft/FreeType.git
 [submodule "libexpat"]
 	path = libexpat
 	url = https://github.com/libexpat/libexpat.git
