@@ -10,6 +10,9 @@
 [submodule "libexpat"]
 	path = libexpat
 	url = https://github.com/libexpat/libexpat.git
+[submodule "freetype"]
+	path = freetype
+	url = https://github.com/notsilverhoft/FreeType.git
 [submodule "fontconfig"]
 	path = fontconfig
 	url = https://gitlab.freedesktop.org/fontconfig/fontconfig.git
