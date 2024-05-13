@@ -37,6 +37,6 @@
 [submodule "coi-serviceworker"]
 	path = coi-serviceworker
 	url = https://github.com/gzuidhof/coi-serviceworker.git
-[submodule "FreeType"]
+[submodule "freetype"]
 	path = freetype
-	url = https://github.com/notsilverhoft/FreeType
+	url = https://gitlab.freedesktop.org/freetype/freetype.git
