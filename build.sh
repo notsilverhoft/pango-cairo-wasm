@@ -10,7 +10,8 @@ set -x
 
 . ./env.sh
 
-export magicprefix=${magicdir}/build
+mkdir -p ${magicprefix}
+
 
 # copied from:
 # https://gist.github.com/kleisauke/acfa1c09522705efa5eb0541d2d00887
@@ -86,7 +87,18 @@ cd ${magicdir}/pixman
     emmake make install
 
 check_result
+######################
+##### freetype
+######################
 
+cd ${magicdir}/freetype
+
+./autogen.sh && \
+    emconfigure ./configure --host=${CHOST} --prefix=${magicprefix} --enable-shared=no --disable-dependency-tracking CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
+    emmake make && \
+    emmake make install
+
+check_result
 ######################
 ##### expat
 ######################
@@ -173,9 +185,9 @@ check_result
 cd ${magicdir}/freetype
 
 ./autogen.sh && \
-    mkdir build && cd build && \
-    emcmake cmake -DCMAKE_BUILD_TYPE=Release .. && \
-    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
+    emconfigure ./configure --host=${CHOST} --prefix=${magicprefix} --enable-shared=no --disable-dependency-tracking CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread' && \
+    emmake make && \
+    emmake make install
 
 check_result
 ######################
