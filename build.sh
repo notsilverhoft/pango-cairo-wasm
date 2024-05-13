@@ -86,18 +86,7 @@ cd ${magicdir}/pixman
     emmake make install
 
 check_result
-######################
-##### freetype
-######################
 
-cd ${magicdir}/freetype
-
-./autogen.sh && \
-    mkdir build && cd build && \
-    emcmake cmake -DCMAKE_BUILD_TYPE=Release .. && \
-    emmake make CFLAGS='-s USE_PTHREADS' LDFLAGS='-lpthread'
-
-check_result
 ######################
 ##### expat
 ######################
