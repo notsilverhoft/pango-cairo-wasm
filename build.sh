@@ -217,7 +217,7 @@ cd ${magicdir}/pango
 cp meson.build meson.build.original
 grep -vwE "subdir\('tests'\)" meson.build.original > meson.build
 
-CFLAGS="$(pkg-config --cflags glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -s USE_PTHREADS" LDFLAGS="$(pkg-config --libs glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -lpthread -lgetxattr" meson setup _build --prefix=${magicprefix} --cross-file=$MESON_CROSS --default-library=static --buildtype=release -Dintrospection=disabled --force-fallback-for=pcre2,gvdb && \
+CFLAGS="$(pkg-config --cflags glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -s USE_PTHREADS" LDFLAGS="$(pkg-config --libs glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -lpthread -lgetxattr -L/$working_dir/PKGCONFIG/iconv/build/lib -liconv" meson setup _build --prefix=${magicprefix} --cross-file=$MESON_CROSS --default-library=static --buildtype=release -Dintrospection=disabled --force-fallback-for=pcre2,gvdb && \
     CFLAGS="$(pkg-config --cflags glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -s USE_PTHREADS" LDFLAGS="$(pkg-config --libs glib-2.0, cairo, pixman-1, fribidi, freetype2, fontconfig, expat) -lpthread" meson install -C _build
 
 check_result
